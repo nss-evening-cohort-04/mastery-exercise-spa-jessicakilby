@@ -1,8 +1,18 @@
+#background {
+	background-color: teal;
+}
+.navbar {
+	margin-top: 15px;
+}
 .carDiv {
-	margin-top: 75px;
+	margin-top: 80px;
 	/*margin-left: 5px;
 	margin-right: 5px;*/
 	border: 1px solid black;
 	border-radius: 10px;
 	height: 400px;
+}
+.select {
+	border: 10px solid aquamarine;
+	background-color: mediumaquamarine;
 }
