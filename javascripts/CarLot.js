@@ -7,7 +7,8 @@ var CarLot = (function () {
 
 	        inventoryLoader.addEventListener("load", function () {
 	        	inventory = JSON.parse(this.responseText);
-	        	populatePage(inventory.cars);
+	        	cars = inventory.cars;
+	        	populatePage(cars);
 		    });
 
 			inventoryLoader.open("GET", "inventory.json");

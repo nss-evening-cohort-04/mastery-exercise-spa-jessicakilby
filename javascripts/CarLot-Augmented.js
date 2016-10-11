@@ -1,10 +1,13 @@
 var CarLot = (function (carChoice) {
 
-		for (var i = 0; i < theCarDivs.length; i++) {
-		theCarDivs[i].addEventListener("click", carDivSelection);
-	}
-
 	carChoice.carDivSelection = function(event){
+		var theCarDivs = document.getElementsByClassName("carDiv");
+		var inputText = document.getElementById("input");
+		console.log("this", this);
+
+		for (var i = 0; i < theCarDivs.length; i++) {
+		theCarDivs[i].addEventListener("click", function(){
+
 		descriptionDiv = this.childNodes[4];
 			descriptionDiv.parentElement.classList.toggle("select");
 			if(inputText.value === "Change car description"){
@@ -17,15 +20,17 @@ var CarLot = (function (carChoice) {
 		    inputText.addEventListener("keyup", function(event){
 		      descriptionDiv.innerHTML = inputText.value;
 		    });
+		}); 
+		}   
 	}
 
-	carChoice.enterKeyPressed = function(keypress){
-	  if (keypress.which === 13) {
-	    inputText.value = "";
-	  }
-	}
-	document.addEventListener("keypress", enterKeyPressed);
-  }
+	// carChoice.enterKeyPressed = function(keypress){
+	//   if (keypress.which === 13) {
+	//     inputText.value = "";
+	//   }
+	// }
+	// document.addEventListener("keypress", enterKeyPressed);
+  
 
   return carChoice;
 
