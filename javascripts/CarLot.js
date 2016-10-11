@@ -1,23 +1,24 @@
-var CarLot = (function () {
+var CarLot = (function (loadCars) {
   	var inventory = [];
 
-    return {
-	    loadInventory: function (callback) {
+    
+	    loadCars.loadInventory = function (callback) {
 	        var inventoryLoader = new XMLHttpRequest();
 
 	        inventoryLoader.addEventListener("load", function () {
 	        	inventory = JSON.parse(this.responseText);
 	        	cars = inventory.cars;
-	        	populatePage(cars);
+	        	CarLot.populatePage(cars);
 		    });
 
 			inventoryLoader.open("GET", "inventory.json");
 			inventoryLoader.send();
-	    },
-	    getInventory: function () {
+	    }
+	    loadCars.getInventory = function () {
 	    	return inventory;
 	    }
-    };
+    
 
-})();
+return loadCars;
+})(CarLot || {});
 
