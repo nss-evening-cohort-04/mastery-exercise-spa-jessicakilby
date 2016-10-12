@@ -1,6 +1,6 @@
 var CarLot = (function (carChoice) {
+    var inputText = document.getElementById("input");
 
-        var inputText = document.getElementById("input");
     carChoice.carDivSelection = function(event){
         var theCarDivs = document.getElementsByClassName("carDiv");
         console.log("theCarDivs", theCarDivs);
@@ -27,6 +27,7 @@ var CarLot = (function (carChoice) {
 
     carChoice.enterKeyPressed = function(keypress){
       if (keypress.which === 13) {
+        inputText.blur();
         inputText.value = "";
       }
     }
