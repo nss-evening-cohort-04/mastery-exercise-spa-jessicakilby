@@ -10,13 +10,10 @@ var CarLot = (function (carChoice) {
             console.log("you clicket me", event);
             
             descriptionDiv = this.childNodes[4];
+            $(theCarDivs).removeClass("select");
             descriptionDiv.parentElement.classList.toggle("select");
-            // if(inputText.value === "Change car description"){
-            //   inputText.value = "";
-            // } 
-            // else if (inputText.value === ""){
-            //   inputText.value = "Change car description";
-            // }; 
+            console.log("the car divs", $(theCarDivs));
+
             inputText.value = "";
             inputText.focus();
             inputText.addEventListener("keyup", function(event){

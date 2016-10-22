@@ -10,7 +10,7 @@ var CarLot = (function (popPage) {
 			outputText.innerHTML += '<div class="carDiv col-xs-6 col-sm-4">'+carObjects+'</div>';
 		};
 	CarLot.carDivSelection();
-	CarLot.enterKeyPressed();
+	// CarLot.enterKeyPressed();
 	}
 	return popPage;
 })(CarLot || {});
