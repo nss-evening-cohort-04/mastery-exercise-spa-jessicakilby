@@ -3,16 +3,13 @@ var CarLot = (function (carChoice) {
 
     carChoice.carDivSelection = function(event){
         var theCarDivs = document.getElementsByClassName("carDiv");
-        console.log("theCarDivs", theCarDivs);
 
         for (var i = 0; i < theCarDivs.length; i++) {
             theCarDivs[i].addEventListener("click", function(event){
-            console.log("you clicket me", event);
             
             descriptionDiv = this.childNodes[4];
             $(theCarDivs).removeClass("select");
             descriptionDiv.parentElement.classList.toggle("select");
-            console.log("the car divs", $(theCarDivs));
 
             inputText.value = "";
             inputText.focus();
